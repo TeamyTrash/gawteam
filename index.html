@@ -1,138 +1,263 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaw & Team Wedding</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", sans-serif;
-            background: #fdf8f5;
-            color: #444;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaw & Team Wedding</title>
 
-        header {
-            background: linear-gradient(135deg, #d4b996, #f3e5d0);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
 
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
+body{
+    background:#f8f6f2;
+    color:#444;
+    font-family:'Noto Sans Thai',sans-serif;
+}
 
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 50px 20px;
-        }
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:80px 25px;
+}
 
-        h2 {
-            color: #b07d52;
-            border-bottom: 2px solid #e7d3bd;
-            padding-bottom: 10px;
-        }
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-top: 20px;
-        }
+.countdown{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:70px;
+}
 
-        .schedule {
-            display: grid;
-            gap: 15px;
-        }
+.box{
+    width:130px;
+    padding:25px;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
 
-        .schedule-item {
-            background: #faf4ef;
-            padding: 15px;
-            border-left: 5px solid #c89b6d;
-            border-radius: 8px;
-        }
+.number{
+    font-size:3rem;
+    color:#9b7b53;
+    font-weight:600;
+    font-family:'Cormorant Garamond', serif;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #f0e3d3;
-            color: #666;
-        }
-    </style>
+.label{
+    color:#777;
+}
+
+h1{
+    font-family:'Cormorant Garamond', serif;
+    font-size:5rem;
+    color:#9b7b53;
+    letter-spacing:4px;
+    font-weight:600;
+}
+
+.subtitle{
+    margin-top:15px;
+    color:#777;
+    letter-spacing:2px;
+}
+
+.date{
+    margin-top:30px;
+    border:1px solid #c7ae88;
+    padding:12px 35px;
+    color:#9b7b53;
+}
+
+h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:3rem;
+    color:#9b7b53;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+.card p{
+    margin-bottom:15px;
+}
+
+iframe{
+    width:100%;
+    height:420px;
+    border:0;
+    border-radius:20px;
+}
+
+footer{
+    text-align:center;
+    padding:50px 20px;
+    color:#777;
+    background:#ece7df;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:3rem;
+    }
+
+    h2{
+        font-size:2.2rem;
+    }
+
+    .box{
+        width:110px;
+        padding:20px;
+    }
+
+    .number{
+        font-size:2.3rem;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<header>
+<section class="hero">
+
+    <div class="countdown">
+        <div class="box">
+            <div id="days" class="number">0</div>
+            <div class="label">วัน</div>
+        </div>
+
+        <div class="box">
+            <div id="hours" class="number">0</div>
+            <div class="label">ชั่วโมง</div>
+        </div>
+
+        <div class="box">
+            <div id="minutes" class="number">0</div>
+            <div class="label">นาที</div>
+        </div>
+
+        <div class="box">
+            <div id="seconds" class="number">0</div>
+            <div class="label">วินาที</div>
+        </div>
+    </div>
+
     <h1>Gaw & Team</h1>
-    <p>Wedding Celebration</p>
-    <p>11 November 2026</p>
-</header>
+
+    <div class="subtitle">
+        WEDDING CELEBRATION
+    </div>
+
+    <div class="date">
+        12 กันยายน 2569
+    </div>
+
+</section>
 
 <section>
-    <h2>เกี่ยวกับคู่บ่าวสาว</h2>
+    <h2>Our Story</h2>
+
+    <div class="card" style="text-align:center;">
+        ขอเชิญร่วมเป็นสักขีพยานในวันสำคัญของเรา
+        และร่วมแบ่งปันช่วงเวลาแห่งความสุข
+        ในพิธีมงคลสมรสของ
+        <strong>Gaw และ Team</strong>
+    </div>
+</section>
+
+<section>
+    <h2>Schedule</h2>
+
     <div class="card">
-        <p>
-            ขอเชิญร่วมเป็นสักขีพยานในงานมงคลสมรสของ
-            <strong>Gaw</strong> และ <strong>Team</strong>
-            เพื่อร่วมแบ่งปันความสุขและความทรงจำอันแสนพิเศษไปด้วยกัน
+        <p><strong>17:30 น.</strong> ลงทะเบียน</p>
+        <p><strong>18:30 น.</strong> พิธีมงคลสมรส</p>
+        <p><strong>19:00 น.</strong> รับประทานอาหาร</p>
+        <p><strong>21:30 น.</strong> จบงาน</p>
+    </div>
+</section>
+
+<section>
+    <h2>Venue</h2>
+
+    <div class="card">
+
+        <h3 style="color:#9b7b53; margin-bottom:15px;">
+            Eastin Grand Hotel Sathorn
+        </h3>
+
+        <p style="margin-bottom:25px;">
+            โรงแรมอีสติน แกรนด์ สาทร กรุงเทพมหานคร
         </p>
-    </div>
-</section>
 
-<section>
-    <h2>กำหนดการ</h2>
-    <div class="schedule">
-        <div class="schedule-item">
-            <strong>09:00 น.</strong><br>
-            พิธีหมั้นและพิธีเช้า
-        </div>
+        <iframe
+            src="https://www.google.com/maps?q=Eastin+Grand+Hotel+Sathorn+Bangkok&output=embed"
+            loading="lazy">
+        </iframe>
 
-        <div class="schedule-item">
-            <strong>12:00 น.</strong><br>
-            รับประทานอาหารกลางวัน
-        </div>
-
-        <div class="schedule-item">
-            <strong>18:00 น.</strong><br>
-            ลงทะเบียนและถ่ายภาพ
-        </div>
-
-        <div class="schedule-item">
-            <strong>19:00 น.</strong><br>
-            พิธีฉลองมงคลสมรส
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2>สถานที่จัดงาน</h2>
-    <div class="card">
-        <p><strong>Grand Ballroom</strong></p>
-        <p>123 ถนนสุขุมวิท กรุงเทพมหานคร</p>
-        <p>กรุณาเดินทางมาถึงก่อนเวลาอย่างน้อย 30 นาที</p>
-    </div>
-</section>
-
-<section>
-    <h2>ติดต่อ</h2>
-    <div class="card">
-        <p>Gaw : 08X-XXX-XXXX</p>
-        <p>Team : 09X-XXX-XXXX</p>
     </div>
 </section>
 
 <footer>
-    With Love ♥ Gaw & Team
+    With Love ♥<br>
+    Gaw & Team
 </footer>
+
+<script>
+const targetDate = new Date("2026-09-12T00:00:00").getTime();
+
+function countdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+        document.querySelector(".countdown").innerHTML =
+            "<h2>Today is our wedding day ♥</h2>";
+        return;
+    }
+
+    document.getElementById("days").innerHTML =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    document.getElementById("hours").innerHTML =
+        Math.floor((distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60));
+
+    document.getElementById("minutes").innerHTML =
+        Math.floor((distance % (1000 * 60 * 60))
+        / (1000 * 60));
+
+    document.getElementById("seconds").innerHTML =
+        Math.floor((distance % (1000 * 60))
+        / 1000);
+}
+
+countdown();
+setInterval(countdown, 1000);
+</script>
 
 </body>
 </html>
