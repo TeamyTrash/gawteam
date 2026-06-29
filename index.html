@@ -22,6 +22,42 @@ body{
     font-family:'Noto Sans Thai',sans-serif;
 }
 
+/* ── Maintenance Banner ── */
+.maintenance-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #9b7b53;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.maintenance-banner .icon {
+    font-size: 1rem;
+    animation: spin 4s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Offset body so banner doesn't overlap content */
+body {
+    padding-top: 44px;
+}
+
+/* ── Original Styles ── */
 section{
     max-width:1000px;
     margin:auto;
@@ -136,12 +172,20 @@ footer{
     .number{
         font-size:2.3rem;
     }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- Maintenance Banner -->
+<div class="maintenance-banner">
+    <span class="icon">⚙</span>
+    หน้าเว็บอยู่ระหว่างการปรับปรุง — We'll be back soon
+</div>
+
+<!-- Original Content -->
 <section class="hero">
 
     <div class="countdown">
@@ -189,6 +233,7 @@ footer{
     </div>
 </section>
 
+<!-- Schedule (hidden)
 <section>
     <h2>Schedule</h2>
 
@@ -199,6 +244,7 @@ footer{
         <p><strong>21:30 น.</strong> จบงาน</p>
     </div>
 </section>
+-->
 
 <section>
     <h2>Venue</h2>
