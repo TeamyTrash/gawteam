@@ -17,44 +17,16 @@
 }
 
 body{
-    background:#f8f6f2;
-    color:#444;
+    background:#FAF5EC; /* Cream/Off-white */
+    color:#4A4341; /* Dark Taupe for text readability */
     font-family:'Noto Sans Thai',sans-serif;
 }
 
-/* ── Maintenance Banner ── */
-.maintenance-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background: #9b7b53;
-    color: #fff;
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.maintenance-banner .icon {
-    font-size: 1rem;
-    animation: spin 4s linear infinite;
-    display: inline-block;
-}
-
-@keyframes spin {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Offset body so banner doesn't overlap content */
-body {
-    padding-top: 44px;
+:root {
+    --crimson: rgb(157, 31, 36); /* #9D1F24 - Main Accent */
+    --taupe: #8B807A; /* Taupe */
+    --cream-bg: #FAF5EC; /* Light Cream */
+    --card-white: #FCFBF9; /* White Cream for cards */
 }
 
 /* ── Original Styles ── */
@@ -84,53 +56,61 @@ section{
 .box{
     width:130px;
     padding:25px;
-    background:#fff;
+    background:var(--card-white);
     border-radius:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+    box-shadow:0 8px 25px rgba(157,31,36,0.04);
+    border:1px solid rgba(139,128,122,0.15);
 }
 
 .number{
     font-size:3rem;
-    color:#9b7b53;
-    font-weight:600;
+    color:var(--crimson);
+    font-weight:700;
 }
 
 .label{
-    color:#777;
+    color:var(--taupe);
+    font-weight:500;
 }
 
 h1{
     font-size:5rem;
-    color:#9b7b53;
+    color:var(--crimson);
     letter-spacing:4px;
-    font-weight:600;
+    font-weight:700;
 }
 
 .subtitle{
     margin-top:15px;
-    color:#777;
+    color:var(--taupe);
     letter-spacing:2px;
+    font-weight:600;
 }
 
 .date{
     margin-top:30px;
-    border:1px solid #c7ae88;
+    border:1px solid var(--crimson);
     padding:12px 35px;
-    color:#9b7b53;
+    color:var(--crimson);
+    font-weight:600;
+    border-radius:30px;
+    background:rgba(157,31,36,0.03);
 }
 
 h2{
     font-size:3rem;
-    color:#9b7b53;
+    color:var(--crimson);
     text-align:center;
     margin-bottom:40px;
+    font-weight:700;
 }
 
 .card{
-    background:#fff;
+    background:var(--card-white);
     border-radius:20px;
     padding:40px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+    box-shadow:0 8px 25px rgba(139,128,122,0.08);
+    border:1px solid rgba(139,128,122,0.12);
 }
 
 .card p{
@@ -147,8 +127,9 @@ iframe{
 footer{
     text-align:center;
     padding:50px 20px;
-    color:#777;
-    background:#ece7df;
+    color:var(--taupe);
+    background:#EDE7DE; /* Slightly darker cream/taupe blend for footer */
+    border-top:1px solid rgba(139,128,122,0.1);
 }
 
 @media(max-width:768px){
@@ -195,12 +176,6 @@ footer{
 </head>
 
 <body>
-
-<!-- Maintenance Banner -->
-<div class="maintenance-banner">
-    <span class="icon">⚙</span>
-    หน้าเว็บอยู่ระหว่างการปรับปรุง — We'll be back soon
-</div>
 
 <!-- Original Content -->
 <section class="hero">
@@ -268,7 +243,7 @@ footer{
 
     <div class="card">
 
-        <h3 style="color:#9b7b53; margin-bottom:15px;">
+        <h3 style="color:var(--crimson); margin-bottom:15px;">
             Eastin Grand Hotel Sathorn
         </h3>
 
