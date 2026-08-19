@@ -172,6 +172,91 @@ footer{
     }
 
 }
+
+/* ── Slideshow Styles ── */
+.slideshow-container {
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    margin: 30px auto 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(174,163,144,0.15);
+    border: 1px solid rgba(174,163,144,0.25);
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+/* The dots/circles */
+.dots-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--crimson);
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
 </style>
 </head>
 
@@ -212,7 +297,41 @@ footer{
         12 กันยายน 2569
     </div>
 
-    <img src="pics/Photo-33.jpg" alt="Gaw & Team" style="width:100%; max-width:600px; height:auto; border-radius:20px; margin-top:30px; display:block; box-shadow:0 8px 25px rgba(174,163,144,0.15); border:1px solid rgba(174,163,144,0.25);">
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="pics/1.JPG" alt="Gaw & Team 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="pics/2.JPG" alt="Gaw & Team 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="pics/3.jpg" alt="Gaw & Team 3">
+        </div>
+        <div class="mySlides fade">
+            <img src="pics/4.jpg" alt="Gaw & Team 4">
+        </div>
+        <div class="mySlides fade">
+            <img src="pics/5.jpg" alt="Gaw & Team 5">
+        </div>
+        <div class="mySlides fade">
+            <img src="pics/6.jpg" alt="Gaw & Team 6">
+        </div>
+        
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- The dots/circles -->
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+    </div>
 
 </section>
 
@@ -300,6 +419,56 @@ function countdown() {
 
 countdown();
 setInterval(countdown, 1000);
+
+// Slideshow functionality
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+    resetTimer();
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+    resetTimer();
+}
+
+function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("dot");
+    
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    if (slides[slideIndex - 1]) {
+        slides[slideIndex - 1].style.display = "block";
+    }
+    if (dots[slideIndex - 1]) {
+        dots[slideIndex - 1].className += " active";
+    }
+}
+
+// Auto slideshow rotation every 4 seconds
+let slideTimer = setInterval(autoSlides, 4000);
+
+function autoSlides() {
+    slideIndex++;
+    showSlides(slideIndex);
+}
+
+function resetTimer() {
+    clearInterval(slideTimer);
+    slideTimer = setInterval(autoSlides, 4000);
+}
 </script>
 
 </body>
